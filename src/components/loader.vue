@@ -14,7 +14,7 @@
           type="file"
           accept="image/*"
         >
-      </label>
+      </label> for image.
     </p>
   </div>
 </template>
@@ -101,10 +101,11 @@ export default {
   width: 100%;
 
   & > p {
-    color: #999;
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
+    color: #fff;
+    position: fixed;
+    z-index: 100;
+    top: -5px;
+    left: 45%;
   }
 }
 

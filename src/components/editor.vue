@@ -5,9 +5,15 @@
       @dblclick="dblclick"
     >
       <img
-        ref="image"
-        :alt="data.name"
+        ref="bg-image"
+        class="background"
         :src="data.url"
+      >
+      <img
+        ref="image"
+        class="bern"
+        :alt="data.name"
+        src="https://i.ibb.co/MfK50zM/bern.png"
         @loadstart="start"
         @load="start"
       >
@@ -272,6 +278,8 @@ export default {
         background: false,
 
         ready: () => {
+          this.cropper.move(window.innerWidth / 2 - 200, 0);
+          this.cropper.zoom(-0.5);
           if (this.croppedData) {
             this.cropper
               .crop()
@@ -370,8 +378,17 @@ export default {
   display: flex;
   height: 100%;
   justify-content: center;
+  background-color: #f0f8ff;
+  background-image: url("https://i.ibb.co/ggQpRCs/arabesque.png");
 
-  & > img {
+  & > .bern {
+    z-index: 100;
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  & > .background {
+    position: absolute;
     max-height: 100%;
     max-width: 100%;
   }

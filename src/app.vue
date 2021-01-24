@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <header class="header">
-      <span class="title">Photo Editor</span>
+      <span class="title">Bernify your picture!</span>
       <navbar
         :data="data"
         @change="change"
@@ -9,12 +9,10 @@
     </header>
     <main class="main">
       <editor
-        v-if="data.loaded"
         ref="editor"
         :data="data"
       />
       <loader
-        v-else
         ref="loader"
         :data="data"
       />
@@ -29,6 +27,7 @@ export default {
       data: {
         cropped: false,
         cropping: false,
+        showToolbar: true,
         loaded: false,
         name: '',
         previousUrl: '',
@@ -76,7 +75,7 @@ export default {
 }
 
 .header {
-  background-color: #666;
+  background-color: #295161;
   height: 3rem;
   overflow: hidden;
   padding-left: 1rem;

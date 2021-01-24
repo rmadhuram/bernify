@@ -47,16 +47,25 @@
       >
         <span class="fa fa-check" />
       </button>
+
+      <a
+        class="nav__button nav__button--success"
+        title="Show/Hide Toolbar"
+        @click="download()"
+      ><span class="fa fa-wrench" /></a>
+
+      <!--
       <a
         v-if="downloadable && data.loaded"
         class="nav__button nav__button--success"
         title="Download"
         :download="data.name"
         :href="data.url"
-      ><span class="fa fa-download" /></a>
+      ><span class="fa fa-download" /></a>-->
+
       <a
         class="nav__button"
-        href="https://github.com/fengyuanchen/photo-editor"
+        href="https://github.com/rmadhuram/bernify"
         title="View on GitHub"
       ><span class="fa fa-github" /></a>
     </nav>
@@ -81,11 +90,22 @@ export default {
   },
 
   methods: {
+    showToolbar: 1,
+
     click({ target }) {
       const action = target.getAttribute('data-action') || target.parentElement.getAttribute('data-action');
 
       if (action) {
         this.$emit('change', action);
+      }
+    },
+    download() {
+      if (this.showToolbar) {
+        document.getElementsByClassName('toolbar')[0].style.visibility = 'hidden';
+        this.showToolbar = 0;
+      } else {
+        document.getElementsByClassName('toolbar')[0].style.visibility = 'inherit';
+        this.showToolbar = 1;
       }
     },
   },
