@@ -1,5 +1,6 @@
-# Photo Editor
+# Bernify - Photo Editor
 
+Bernify your pictures using this simple tool!
 > A photo editing application based on the [Cropper.js](https://github.com/fengyuanchen/cropperjs).
 
 - [Website](https://fengyuanchen.github.io/photo-editor)
